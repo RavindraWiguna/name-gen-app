@@ -21,7 +21,8 @@ A Simple Page, where user can input country of origin and starting letter with d
 
 If the Top K Best value is set to 1, then the model will always output the exact same sequence (name).
 
-## Live-Demo
+## Live Demo
 Visit: [demo](https://name-generator-lstm.vercel.app/) 
 
 ## Screenshot
+![app-screenshot](https://github.com/RavindraWiguna/name-gen-app/blob/c757e8d213f10ccd973bf34a6ab72910825b7d55/screenshots/SSNameGen.png)
