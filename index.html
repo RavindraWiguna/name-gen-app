@@ -2,12 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link href="src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/mycss.css">
+    <title>Name Generator with LSTM App</title>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+  <body class="bg-neutral-800">
+    <div id="app" class="">
+      <!-- Title -->
+      <div class="text-white text-center mt-4 text-4xl font-bold">
+        Name Generator with LSTM Model
+      </div>
+      <!-- Main Container -->
+       <div id="main-container" class="justify-center flex my-4 w-full">
+          <div>
+            <div id="input-place" class="flex flex-col bg-white py-4 px-20 rounded">
+              <div id="country-of-origin-cnt" class="text-black mr-2">
+                <div>
+                  <label for="country-of-origin">Choose a country of origin</label>
+                </div>
+                <div>
+                  <select name="country-of-origin" id="country-of-origin-value" class="bg-neutral-200 rounded p-1">
+                  </select> 
+                </div>
+              </div>
+              <div id="start-letter-cnt" class="text-black mr-2">
+                <div>
+                  
+                  <label for="start-letter">Start letter of the name</label>
+                </div>
+                <div>
+                  <select name="start-letter" id="start-letter-value" class="bg-neutral-200 rounded p-1">
+                  </select>  
+                </div>
+                <div class="slidecontainer">
+                  <div>Top K Best (use the top k best continuation letter)</div>
+                  <input type="range" min="1" max="5" value="2" class="slider" id="topk-slider">
+                  <div id="topk-value">2</div>
+                </div>
+              </div>
+              <div class="flex content-center mt-2">
+                <button class="font-bold bg-gray-800 text-white px-4 py-2 rounded hover:bg-black" id="generate-name-btn">
+                  Generate!
+              </button>
+              </div>
+            </div>
+            <div id="output-place" class="bg-white mt-2 p-2 rounded">
+              <div>
+                Generated Name:
+              </div>
+              <div id="output-lstm">
+                -
+              </div>
+            </div>
+          </div>
+       </div>     
+    </div>
+    <script src="src/main.js"></script>
+    <footer class="bg-white p-2 text-center text-m" id="footer">
+      <p> Front End Repository: <a href="https://github.com/RavindraWiguna/name-gen-app" class="text-blue-500">Github</a> |
+          Back End Repository: <a href="https://huggingface.co/spaces/ravindrawiguna/name-generator-vanilla/tree/main" class="text-orange-500">HuggingFace</a>
+      </p>
+      
+      <p>Front End made with vanilla html+tailwind+js</p>
+      <p>Back End made with fastapi</p>
+      <p>Model build with PyTorch modified based on: <a href="https://pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html">PyTorch Documentation Tutorials</a></p>
+    </footer> 
   </body>
 </html>
